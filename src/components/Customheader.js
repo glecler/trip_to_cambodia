@@ -26,7 +26,7 @@ function Customheader () {
 				pad="medium"
 				gap="large"
 			>
-				<Link to="/" style={linkStyle}><Text>Acceuil</Text></Link>	
+				<Link to="/" style={linkStyle}><Text>Accueil</Text></Link>	
 				<Link to="/gallery" style={linkStyle}>Gallerie</Link>
 				<Link to="/blog" style={linkStyle}>Blog</Link>
 			</Box>
