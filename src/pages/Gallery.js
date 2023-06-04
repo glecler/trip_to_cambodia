@@ -1,9 +1,17 @@
-import { Box, Text, Heading, Image } from 'grommet';
+import { Box, Text, Heading, Image, ResponsiveContext } from 'grommet';
 import Customheader from '../components/Customheader.js';
-
+import React from 'react';
 
 function Gallery () {
-	
+	const size = React.useContext(ResponsiveContext);
+	var direction = 'row';
+	var width = '25vh';
+
+	if (size == 'small') {
+		direction = 'column';
+		width = '80vh';
+	}
+
 	function importAll(r) {
 		return r.keys().map(r);
 	}
@@ -28,9 +36,9 @@ function Gallery () {
 				</Heading>
 				<Text> Petite sélection de photos prises au cours du séjour </Text>
 			</Box>
-			<Box justify="center" alignContent="center" width="80vw" margin="medium" direction="row" alignSelf="center" wrap>
+			<Box justify="center" alignContent="center" width="80vw" margin="medium" direction={direction} alignSelf="center" wrap>
 				{images[0].map((image) => (
-					<Box alignContent="center" justify="center" width="25vw" margin="xsmall">
+					<Box alignContent="center" justify="center" width={width} margin="xsmall">
 						<Image align="center" src={image}/>
 					</Box>
 					))}
